@@ -38,6 +38,14 @@ body {
     backdrop-filter: blur(15px);
     background: rgba(255,255,255,0.25);
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+
+    /* Animation */
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
 }
 
 /* FORM AREA */
@@ -45,10 +53,10 @@ body {
     width: 100%;
 }
 
-/* IFRAME FULL HEIGHT */
+/* IFRAME */
 iframe {
     width: 100%;
-    height: 1100px; /* Important for full form */
+    height: 1100px;
     border: none;
     border-radius: 15px;
 }
@@ -92,6 +100,9 @@ img {
 
 <body>
 
+<!-- LAUGH SOUND -->
+<audio id="laugh" src="https://www.myinstants.com/media/sounds/evil-laugh.mp3"></audio>
+
 <div class="app">
 
 <!-- HEADER -->
@@ -120,7 +131,10 @@ img {
         <h2>🥇 BEST SMILE AWARD 2026 🥇</h2>
         <h1 class="april">APRIL FOOL 😂</h1>
 
-        <img src="https://i.imgur.com/231Gv7a.jpeg"
+        <!-- FIXED IMAGE -->
+        <img src="https://i.imgur.com/231Gv7a.jpeg">
+
+        <p style="margin-top:10px;">Thank you Miss for trying my project ❤️</p>
 
         <h3 id="counter">People Fooled: 1000</h3>
     </div>
@@ -143,6 +157,9 @@ function goToResult(){
 function showPrank(){
     document.getElementById("final").classList.remove("hidden");
 
+    // Play sound
+    document.getElementById("laugh").play();
+
     let count = 1000;
     setInterval(()=>{
         count++;
@@ -152,4 +169,4 @@ function showPrank(){
 </script>
 
 </body>
-  </html>
+</html>
